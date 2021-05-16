@@ -34,7 +34,7 @@ public class Store {
         System.out.println(cars);
     }
 
-    public String myListGet(){
+    public String myListGet(int num){
 
         ArrayList<String> cars = new ArrayList<>();
 
@@ -43,7 +43,34 @@ public class Store {
         cars.add("Toyota");
         cars.add("Kia");
 
-        return cars.get(1);
+        return cars.get(num);
+    }
+
+    public String myListAdd(String input){
+
+        ArrayList<String> cars = new ArrayList<>();
+
+        cars.add("BMW");
+        cars.add("Ford");
+        cars.add("Toyota");
+        cars.add("Kia");
+        cars.add(input);
+
+        return cars.get(4);
+    }
+
+    public String myListRemove(int num){
+
+        ArrayList<String> cars = new ArrayList<>();
+
+        cars.add("BMW");
+        cars.add("Ford");
+        cars.add("Toyota");
+        cars.add("Kia");
+
+        cars.remove(num);
+
+        return cars.get(num-1);
     }
 
 
@@ -66,7 +93,7 @@ public class Store {
         System.out.println(capitalCities);
     }
 
-    public String myMapGet(){
+    public String myMapGet(String name){
 
         HashMap<String, String> capitalCities = new HashMap<>();
 
@@ -76,7 +103,37 @@ public class Store {
         capitalCities.put("South Korea", "Seoul");
         capitalCities.put("South Africa", "Pretoria");
 
-        return capitalCities.get("South Korea");
+        return capitalCities.get(name);
+    }
+
+    public String myMapAdd(String input1, String input2){
+
+        HashMap<String, String> capitalCities = new HashMap<>();
+
+        capitalCities.put("Japan", "Kyoto");
+        capitalCities.put("England", "London");
+        capitalCities.put("Germany", "Berlin");
+        capitalCities.put("South Korea", "Seoul");
+        capitalCities.put("South Africa", "Pretoria");
+
+        capitalCities.put(input1, input2);
+
+        return capitalCities.get(input1);
+    }
+
+    public String myMapRemove(String input){
+
+        HashMap<String, String> capitalCities = new HashMap<>();
+
+        capitalCities.put("Japan", "Kyoto");
+        capitalCities.put("England", "London");
+        capitalCities.put("Germany", "Berlin");
+        capitalCities.put("South Korea", "Seoul");
+        capitalCities.put("South Africa", "Pretoria");
+
+        capitalCities.remove(input);
+
+        return capitalCities.get("Germany");
     }
 
 
@@ -106,7 +163,7 @@ public class Store {
 
     }
 
-    public Boolean mySetGet(){
+    public Boolean mySetGet(String name){
 
         HashSet<String> laptops = new HashSet<>();
 
@@ -116,6 +173,38 @@ public class Store {
         laptops.add("MacBook");
         laptops.add("Dell");
         laptops.add("Toshiba");
+
+        return laptops.contains(name);
+    }
+
+    public Boolean mySetAdd(String name){
+
+        HashSet<String> laptops = new HashSet<>();
+
+        laptops.add("Lenovo");
+        laptops.add("HP");
+        laptops.add("Asus");
+        laptops.add("MacBook");
+        laptops.add("Dell");
+        laptops.add("Toshiba");
+
+        laptops.add(name);
+
+        return laptops.contains(name);
+    }
+
+    public Boolean mySetRemove(){
+
+        HashSet<String> laptops = new HashSet<>();
+
+        laptops.add("Lenovo");
+        laptops.add("HP");
+        laptops.add("Asus");
+        laptops.add("MacBook");
+        laptops.add("Dell");
+        laptops.add("Toshiba");
+
+        laptops.remove("Asus");
 
         return laptops.contains("Asus");
     }
